@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="home">
+  <h1 class="page-heading">52 Salads Home Page</h1>
+  {% for post in site.posts %}
+  <h2><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+  {% assign date_format = site.angusftheme1.date_format | default: "%b %-d, %Y" %}
+  <span class="post-meta">{{ post.date | date: date_format }}</span>
+  <div class="post-content" itemprop="articleBody">
+  {{ post.content }}
+  </div>
+  {% endfor %}
+  <hr>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+</div>
